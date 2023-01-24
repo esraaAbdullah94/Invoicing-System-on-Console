@@ -1,0 +1,12 @@
+Invoice Date: Tue Mar 01 00:00:00 PST 2022
+Customer Name: Eraa
+Customer Phone: 77777
+Total Amount: 2.0
+Paid Amount: 0.0
+Balance: 0.0
+Item ID: uuu8
+Item Name: Milk
+Unit Price: 2.0
+Quantity: 1
+Expiry Date: Wed Mar 01 00:00:00 PST 2023
+Shop Name: goresory
