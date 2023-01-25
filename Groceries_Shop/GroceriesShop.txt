@@ -1,0 +1,10 @@
+Item ID: 44tt
+Item Name: fffff
+Unit Price: 2.0
+Quantity: 1
+Expiry Date: Wed Feb 01 00:00:00 PST 2023
+Item ID: jj5
+Item Name: kjj
+Unit Price: 6.0
+Quantity: 1
+Expiry Date: Wed Feb 01 00:00:00 PST 2023
