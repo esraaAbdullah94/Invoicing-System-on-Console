@@ -4,69 +4,58 @@ import java.util.Scanner;
 
 public class Customer {
 
-private String customerId;
+	private String customerId;
 
-private String customerName;
+	private String customerName;
 
-private String customerAddress;
+	private String customerAddress;
 
-private String customerPhone;
+	private String customerPhone;
 
-public Customer() {
+	public Customer() {
 
-Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 
-System.out.print("Enter customer id: ");
+		System.out.print("Enter customer id: ");
 
-this.customerId = scanner.nextLine();
+		this.customerId = scanner.nextLine();
 
-System.out.print("Enter customer name: ");
+		System.out.print("Enter customer name: ");
 
-this.customerName = scanner.nextLine();
+		this.customerName = scanner.nextLine();
 
-System.out.print("Enter customer address: ");
+		System.out.print("Enter customer address: ");
 
-this.customerAddress = scanner.nextLine();
+		this.customerAddress = scanner.nextLine();
 
-System.out.print("Enter customer phone: ");
+		System.out.print("Enter customer phone: ");
 
-this.customerPhone = scanner.nextLine();
+		this.customerPhone = scanner.nextLine();
 
-}
+	}
 
-public String getCustomerId() {
+	public String getCustomerId() {
 
-return customerId;
+		return customerId;
 
-}
+	}
 
-public String getCustomerName() {
+	public String getCustomerName() {
 
-return customerName;
+		return customerName;
 
-}
+	}
 
-public String getCustomerAddress() {
+	public String getCustomerAddress() {
 
-return customerAddress;
+		return customerAddress;
 
-}
+	}
 
-public String getCustomerPhone() {
+	public String getCustomerPhone() {
 
-return customerPhone;
+		return customerPhone;
 
-}
-
-//Customer myCustomer = new Customer();
-
-//System.out.println(myCustomer.getCustomerId()); // prints the customer id entered by user
-
-//System.out.println(myCustomer.getCustomerName()); // prints the customer name entered by user
-
-//System.out.println(myCustomer.getCustomerAddress()); // prints the customer address entered by user
-
-// System.out.println(myCustomer.getCustomerPhone()); // prints the customer phone entered by user
+	}
 
 }
-

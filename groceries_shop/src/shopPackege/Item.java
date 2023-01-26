@@ -1,5 +1,6 @@
 package shopPackege;
 
+import java.io.Serializable;
 import java.text.ParseException;
 
 import java.text.SimpleDateFormat;
@@ -8,107 +9,138 @@ import java.util.Date;
 
 import java.util.Scanner;
 
-public class Item {
+public class Item implements Serializable {
 
-private String itemId;
+	private String itemId;
 
-private String itemName;
+	private String itemName;
 
-private double unitPrice;
+	private double unitPrice;
 
-private int quantity;
+	private int quantity;
 
-private double qtyAmount;
+	private double qtyAmount;
 
-private Date expiryDate;
+	private Date expiryDate;
+	 
 
-public Item() {
+	public Item(String itemId, String itemName, double unitPrice, int quantity, double qtyAmount, Date expiryDate) {
+		super();
+		this.itemId = itemId;
+		this.itemName = itemName;
+		this.unitPrice = unitPrice;
+		this.quantity = quantity;
+		this.qtyAmount = qtyAmount;
+		this.expiryDate = expiryDate;
+	}
 
-Scanner scanner = new Scanner(System.in);
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
+	}
 
-System.out.print("Enter item id: ");
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
 
-this.itemId = scanner.nextLine();
+	//public void setUnitPrice(double unitPrice) {
+		//this.unitPrice = unitPrice;
+	//}
 
-System.out.print("Enter item name: ");
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 
-this.itemName = scanner.nextLine();
+	public void setQtyAmount(double qtyAmount) {
+		this.qtyAmount = qtyAmount;
+	}
 
-System.out.print("Enter unit price: ");
+	public void setExpiryDate(Date expiryDate) {
+		this.expiryDate = expiryDate;
+	}
 
-this.unitPrice = scanner.nextDouble();
+	public Item() {
 
-System.out.print("Enter quantity: ");
+		Scanner scanner = new Scanner(System.in);
 
-this.quantity = scanner.nextInt();
+		System.out.print("Enter item id: ");
 
-scanner.nextLine();
+		this.itemId = scanner.nextLine();
 
-System.out.print("Enter expiry date (dd-MM-yyyy): ");
+		System.out.print("Enter item name: ");
 
-String expiryDateStr = scanner.nextLine();
+		this.itemName = scanner.nextLine();
 
-SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		System.out.print("Enter unit price: ");
 
-try {
+		this.unitPrice = scanner.nextDouble();
 
-this.expiryDate = sdf.parse(expiryDateStr);
+		System.out.print("Enter quantity: ");
 
-} catch (ParseException e) {
+		this.quantity = scanner.nextInt();
 
-System.out.println("Invalid date format. Please enter date in the format dd-MM-yyyy.");
+		scanner.nextLine();
+
+		System.out.print("Enter expiry date (dd-MM-yyyy): ");
+
+		String expiryDateStr = scanner.nextLine();
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+
+		try {
+
+			this.expiryDate = sdf.parse(expiryDateStr);
+
+		} catch (ParseException e) {
+
+			System.out.println("Invalid date format. Please enter date in the format dd-MM-yyyy.");
+
+		}
+
+		this.qtyAmount = this.unitPrice * this.quantity;
+
+	}
+
+	public String getItemId() {
+
+		return itemId;
+
+	}
+
+	public String getItemName() {
+
+		return itemName;
+
+	}
+
+	public double getUnitPrice() {
+
+		return unitPrice;
+
+	}
+
+	public int getQuantity() {
+
+		return quantity;
+
+	}
+
+	public double getQtyAmount() {
+
+		return qtyAmount;
+
+	}
+
+	public Date getExpiryDate() {
+
+		return expiryDate;
+
+	}
+
+	public void setUnitPrice(double newPrice) {
+		this.unitPrice = unitPrice;
+		
+	}
+
+
 
 }
-
-this.qtyAmount = this.unitPrice * this.quantity;
-
-}
-
-public String getItemId() {
-
-return itemId;
-
-}
-
-public String getItemName() {
-
-return itemName;
-
-}
-
-public double getUnitPrice() {
-
-return unitPrice;
-
-}
-
-public int getQuantity() {
-
-return quantity;
-
-}
-
-public double getQtyAmount() {
-
-return qtyAmount;
-
-}
-
-public Date getExpiryDate() {
-
-return expiryDate;
-
-}
-
-// Item myItem = new Item();
-
-// System.out.println(myItem.getItemId()); // prints the item id entered by user
-
-// System.out.println(myItem.getItemName()); // prints the item name entered by
-
-// user
-
-// System.out.println(myItem.getUnitPrice()); // prints the unit price
-
-}
-

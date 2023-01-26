@@ -1,24 +1,28 @@
 package shopPackege;
 
-import java.io.IOException;
-
-import java.io.PrintWriter;
-
 import java.io.Serializable;
-
 import java.text.ParseException;
-
 import java.text.SimpleDateFormat;
 
 import java.util.Scanner;
 
 import java.util.Date;
 
-import java.util.List;
-
 import java.util.ArrayList;
 
 public class Invoice implements Serializable {
+
+	public Invoice(String customerName, String customerPhone, Date invoiceDate, ArrayList<Item> items,
+			double totalAmount, double paidAmount, double balance) {
+		
+		this.customerName = customerName;
+		this.customerPhone = customerPhone;
+		this.invoiceDate = invoiceDate;
+		this.items = items;
+		this.totalAmount = totalAmount;
+		this.paidAmount = paidAmount;
+		this.balance = balance;
+	}
 
 	private String customerName;
 
@@ -33,46 +37,6 @@ public class Invoice implements Serializable {
 	private double paidAmount;
 
 	private double balance;
-
-//4- Report: Statistics (No Of Items, No of Invoices, Total Sales)
-
-	public static void generateReport(List<Invoice> invoices, String fileName) {
-
-		int numberOfInvoices = invoices.size();
-
-		int numberOfItems = 0;
-
-		double totalSales = 0;
-
-		for (Invoice invoice : invoices) {
-
-			numberOfItems += invoice.getItems().size();
-
-			totalSales += invoice.getTotalAmount();
-
-		}
-
-		try {
-
-			PrintWriter writer = new PrintWriter(fileName, "UTF-8");
-
-			writer.println("Number of Invoices: " + numberOfInvoices);
-
-			writer.println("Number of Items: " + numberOfItems);
-
-			writer.println("Total Sales: " + totalSales);
-
-			writer.close();
-
-			System.out.println("Report has been saved to " + fileName + " successfully.");
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-
-		}
-
-	}
 
 	public Invoice() {
 
