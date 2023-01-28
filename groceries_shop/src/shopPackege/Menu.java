@@ -26,6 +26,7 @@ public class Menu {
 	private static String website;
 
 	private static Scanner scanner = new Scanner(System.in);
+	static int[] optionCount = new int[4];
 
 // Load Data Method
 
@@ -268,6 +269,7 @@ public class Menu {
 			System.out.println("Enter your choice: ");
 
 			userChoice = scanner.nextInt();
+			optionCount[userChoice - 1]++;
 
 			switch (userChoice) {
 
@@ -290,16 +292,23 @@ public class Menu {
 				break;
 
 			case 4:
-
-				break;
-
-			default:
-
-				System.out.println("Invalid choice, please try again.");
-
-			}
-
-		} while (userChoice != 4);
+				System.out.println("Are you sure you want to exit? Press y/n");
+                char c = scanner.next().charAt(0);
+                if (c == 'y') {
+                    System.out.println("Exiting program...");
+                    break;
+                } else {
+                    System.out.println("Continuing program...");
+                    break;
+                }
+            default:
+                System.out.println("Invalid option. Please enter a valid option.");
+                break;
+        }
+    } while (userChoice != 4);
+		// Print each Main Menu Item with the number of times it was selected
+        for (int i = 0; i < optionCount.length; i++) {
+            System.out.println((i + 1) + ". " + optionCount[i] + " times selected.");
 
 	}
 

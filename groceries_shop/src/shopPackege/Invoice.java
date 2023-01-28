@@ -158,4 +158,9 @@ public class Invoice implements Serializable {
 
 	}
 
+	public Object getInvoiceNo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
